@@ -7,3 +7,7 @@ In the first stage I am creating template.py python file in which I will be writ
 **Stage 2**
 
 In the second stage I will be using my requirements.txt file where I will be passing all the required packages for this project and at one click I can install all the package.
+
+**Stage 3**
+
+In this stage I will be using setup.py file for creating a local package. 
