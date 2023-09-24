@@ -11,3 +11,8 @@ In the second stage I will be using my requirements.txt file where I will be pas
 **Stage 3**
 
 In this stage I will be using setup.py file for creating a local package. 
+
+**Stage 4**
+
+I have created a common.py in util folders where I have stored all the function that are mostly used.
+
