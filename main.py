@@ -1,3 +1,13 @@
 from quality_prediction_mlflow import logger
+from quality_prediction_mlflow.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 
-logger.info("Welcome to our project")
+STAGE_NAME = "Data Ingestion Stage"
+
+try:
+    logger.info(f">>>>>>>stage {STAGE_NAME} started <<<<<<<")
+    obj = DataIngestionTrainingPipeline()
+    obj.main()
+    logger.info(f">>>>>>>stage {STAGE_NAME} Completed <<<<<<<")
+except Exception as e:
+    logger.exception(e)
+    raise e
