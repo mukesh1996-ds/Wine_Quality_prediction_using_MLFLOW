@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/mukeshkr/Desktop/Personal/ebooks/Machine%20Learning%20projects/Wine_Quality_prediction_using_MLFLOW/mlruns/0/de01288650a84bc9a8ed4a6af2039238/artifacts
+end_time: 1695645030648
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: de01288650a84bc9a8ed4a6af2039238
+run_name: upbeat-fawn-368
+run_uuid: de01288650a84bc9a8ed4a6af2039238
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695645026883
+status: 3
+tags: []
+user_id: mukeshkr

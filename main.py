@@ -3,7 +3,7 @@ from quality_prediction_mlflow.pipeline.stage_01_data_ingestion import DataInges
 from quality_prediction_mlflow.pipeline.stage_02_data_validation import DataVaildationTrainingPipeline
 from quality_prediction_mlflow.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
 from quality_prediction_mlflow.pipeline.stage_04_model_training import ModelTrainerTrainingPipeline
-
+from quality_prediction_mlflow.pipeline.stage_05_model_evaluation import ModelEvaluationTrainingPipeline
 
 
 STAGE_NAME = "Data Ingestion Stage"
@@ -44,6 +44,16 @@ try:
     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
     model_training = ModelTrainerTrainingPipeline()
     model_training.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+STAGE_NAME = "Model evaluation stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    obj = ModelEvaluationTrainingPipeline()
+    obj.main()
     logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
 except Exception as e:
     logger.exception(e)
