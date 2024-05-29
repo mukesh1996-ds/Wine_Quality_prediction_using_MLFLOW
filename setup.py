@@ -1,28 +1,33 @@
-import setuptools
+from setuptools import setup, find_packages
+from typing import List
 
-with open("README.md", "r", encoding="utf-8") as f:
-    long_description = f.read()
+PROJECT_NAME = "Machine Learning Project"
+VERSION = "0.0.1"
+DESCRIPTION = "This is our machine learning project inmodular coding"
+AUTHOR_NAME = "Mukesh Kumar"
+AUTHOR_EMIL = "mks.mukesh1996@gmail.com"
 
-__version__ = "0.0.0"
+REQUIREMENTS_FILE_NAME = "requirements.txt"
 
-REPO_NAME = "Wine_Quality_prediction_using_MLFLOW"
-AUTHOR_USER_NAME = "mUKESH"
-SRC_REPO = 'quality_prediction_mlflow'
-AUTHOR_EMAIL = "mks.mukesh1996@gmail.com"
+HYPHEN_E_DOT = "-e ."
+# Requriments.txt file open
+# read
+# \n ""
+def get_requirements_list()->List[str]:
+    with open(REQUIREMENTS_FILE_NAME) as requriment_file:
+        requriment_list = requriment_file.readlines()
+        requriment_list = [requriment_name.replace("\n", "") for requriment_name in requriment_list]
 
+        if HYPHEN_E_DOT in requriment_list:
+            requriment_list.remove(HYPHEN_E_DOT)
 
-setuptools.setup(
-    name = SRC_REPO,
-    version=__version__,
-    author=AUTHOR_USER_NAME,
-    author_email= AUTHOR_EMAIL,
-    description="A small python project",
-    long_description=long_description,
-    long_description_content = "text/markdown",
-    url = f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
-    project_url = {
-        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues"
-    },
-    package_dir = {"":"src"},
-    packages = setuptools.find_packages(where="src")
-)
+        return requriment_list
+
+setup(name=PROJECT_NAME,
+      version=VERSION,
+      description=DESCRIPTION,
+      author=AUTHOR_NAME,
+      author_email=AUTHOR_EMIL,
+      packages=find_packages(),
+      install_requries = get_requirements_list()
+     )
